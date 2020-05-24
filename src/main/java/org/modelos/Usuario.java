@@ -6,6 +6,9 @@ import org.jloquent.Model;
 
 public class Usuario extends Model {
 
+    public void Usuario(){
+
+    }
 
     public SimpleStringProperty nombre;
 

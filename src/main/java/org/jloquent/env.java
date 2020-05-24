@@ -18,7 +18,7 @@ public class env implements DBConfig{
 
     @Override
     public String getDatabaseName() {
-        return "practica02meed";
+        return "test01";
     }
 
     @Override

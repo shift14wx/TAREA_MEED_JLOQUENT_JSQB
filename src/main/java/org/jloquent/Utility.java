@@ -57,7 +57,12 @@ public class Utility {
                 if (methods[i].getName().contains("get")) {
                     String name = toFieldName(methods[i].getName());
                     System.out.println(name);
-                    Object value = methods[i].invoke(invoker, (Object[]) null);
+                    Object value;
+                    try {
+                       value = methods[i].invoke(invoker, (Object[]) null);
+                    }catch (Exception e){
+                        value =  methods[i].getDefaultValue();
+                    }
                     Class<?> type = methods[i].getReturnType();
 
                     if (request || value != null) {
@@ -65,7 +70,7 @@ public class Utility {
                     }
                 }
             }
-        } catch (IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+        } catch (IllegalArgumentException e) {
             Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, "Failed to get name of fields", e);
         }
 

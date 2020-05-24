@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="751.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.loginController">
+   <children>
+      <Circle fill="DODGERBLUE" layoutX="14.0" layoutY="14.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="711.0" layoutY="14.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <StackPane fx:id="stackDialog" layoutX="216.0" layoutY="33.0" prefHeight="370.0" prefWidth="333.0">
+         <children>
+            <AnchorPane prefHeight="370.0" prefWidth="264.0" style="-fx-border-radius: 100px; -fx-background-color: linear-gradient(to right, #f953c6, #b91d73);">
+               <children>
+                  <Label layoutX="132.0" layoutY="30.0" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtUsername" focusColor="WHITE" labelFloat="true" layoutX="77.0" layoutY="133.0" prefHeight="25.0" prefWidth="180.0" promptText="Usuario" style="-fx-prompt-text-fill: white;" unFocusColor="WHITE" />
+                  <JFXPasswordField fx:id="txtPassword" focusColor="WHITE" labelFloat="true" layoutX="77.0" layoutY="212.0" prefHeight="25.0" prefWidth="180.0" promptText="Contraseña" style="-fx-prompt-text-fill: white;" unFocusColor="WHITE" />
+                  <JFXButton layoutX="116.0" layoutY="298.0" mnemonicParsing="false" onAction="#attempt" prefHeight="40.0" prefWidth="103.0" style="-fx-background-color: #28a745;" text="Iniciar sesión" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children></StackPane>
+   </children>
+</AnchorPane>
