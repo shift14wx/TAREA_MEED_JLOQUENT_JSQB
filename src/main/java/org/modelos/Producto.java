@@ -1,41 +1,16 @@
 package org.modelos;
 
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import org.jloquent.Model;
-
-import java.util.List;
-import java.util.function.Supplier;
 
 public class Producto extends Model {
 
 
-    SimpleStringProperty idProducto;
     SimpleStringProperty nombre;
-    SimpleStringProperty precio;
-    SimpleStringProperty unidades;
-    public Producto(String id, String nombre, String precio,
-                    String unidades) {
-        this.idProducto = new SimpleStringProperty(id);
-        this.nombre = new SimpleStringProperty(nombre);
-        this.precio = new SimpleStringProperty(precio);
-        this.unidades = new SimpleStringProperty(unidades);
-    }
-
-    public Producto(){
-
-    };
-
-    public String getidProducto() {
-        return idProducto.get();
-    }
-
-    public SimpleStringProperty idProductoProperty() {
-        return idProducto;
-    }
-
-    public void setIdProducto(String id) {
-        this.idProducto.set(id);
-    }
+    SimpleDoubleProperty precio;
+    SimpleIntegerProperty unidades;
 
     public String getNombre() {
         return nombre.get();
@@ -46,31 +21,30 @@ public class Producto extends Model {
     }
 
     public void setNombre(String nombre) {
-        this.nombre.set(nombre);
+        this.nombre=new SimpleStringProperty(nombre);
     }
 
-    public String getPrecio() {
+    public double getPrecio() {
         return precio.get();
     }
 
     public SimpleStringProperty precioProperty() {
-        return precio;
+        return new SimpleStringProperty(precio.getValue()+"");
     }
 
-    public void setPrecio(String precio) {
-        this.precio.set(precio);
+    public void setPrecio(double precio) {
+        this.precio= new SimpleDoubleProperty(precio);
     }
 
-    public String getUnidades() {
+    public int getUnidades() {
         return unidades.get();
     }
 
     public SimpleStringProperty unidadesProperty() {
-        return unidades;
+        return new SimpleStringProperty(unidades.getValue()+"");
     }
 
-    public void setUnidades(String unidades) {
-        this.unidades.set(unidades);
+    public void setUnidades(int unidades) {
+        this.unidades = new SimpleIntegerProperty(unidades);
     }
-
 }

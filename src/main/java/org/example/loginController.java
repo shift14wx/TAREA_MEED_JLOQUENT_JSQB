@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import org.jloquent.Connector;
+import org.modelos.Usuario;
 
 public class loginController {
 
@@ -34,11 +35,13 @@ public class loginController {
             Jsqb jsqb = new Jsqb();
             String whereClause =String.format("password='%s' AND nickname='%s'",this.txtPassword.getText(),
                     this.txtUsername.getText());
-            String sql = jsqb.select("usuarios","count(id) as n").where(whereClause).write();
+            String sql = jsqb.select("usuarios","id,count(id) as n").where(whereClause+" group by id").write();
             System.out.println(sql);
             ResultSet c =connector.executeQuery(sql.replace("usuarios.",""));
             if (c.next()){
                 if (c.getInt("n")>0){
+                    Usuario usuarioLog = Usuario.find(c.getInt("id"),Usuario::new);
+                    App.setUsuarioLog(usuarioLog);
                     App.setRoot("dashboard");
                 }
             }

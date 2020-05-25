@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.program.productoController">
+<StackPane fx:id="stackDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.program.productoController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1e2e1;">
          <children>
@@ -19,19 +16,18 @@
                         <Font size="31.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="328.0" layoutY="14.0" prefHeight="36.0" prefWidth="73.0" style="-fx-background-color: #28a745;" text="Agregar" textFill="WHITE" />
-                  <JFXButton layoutX="408.0" layoutY="14.0" prefHeight="36.0" prefWidth="66.0" style="-fx-background-color: #007bff;" text="Editar" textFill="WHITE" />
-                  <JFXButton layoutX="480.0" layoutY="14.0" prefHeight="36.0" prefWidth="66.0" style="-fx-background-color: #dc3545;" text="Eliminar" textFill="WHITE" />
+                  <JFXButton layoutX="328.0" layoutY="14.0" onAction="#agregarProducto" prefHeight="36.0" prefWidth="73.0" style="-fx-background-color: #28a745;" text="Agregar" textFill="WHITE" />
+                  <JFXButton fx:id="btnEdit" layoutX="408.0" layoutY="14.0" onAction="#editarProducto" prefHeight="36.0" prefWidth="66.0" style="-fx-background-color: #007bff;" text="Editar" textFill="WHITE" />
+                  <JFXButton fx:id="btnDelete" layoutX="480.0" layoutY="14.0" onAction="#eliminarProducto" prefHeight="36.0" prefWidth="66.0" style="-fx-background-color: #dc3545;" text="Eliminar" textFill="WHITE" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="34.0" layoutY="64.0" prefHeight="315.0" prefWidth="537.0" style="-fx-background-color: #f5f5f6;">
                <children>
-                  <TableView fx:id="productoTableView" layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="509.0">
+                  <TableView fx:id="productoTableView" layoutX="14.0" layoutY="14.0" onMouseClicked="#selectProductoFromTable" prefHeight="300.0" prefWidth="509.0">
                     <columns>
-                      <TableColumn fx:id="tcIdProducto" prefWidth="54.00001525878906" text="id" />
                       <TableColumn fx:id="tcNombreProducto" prefWidth="228.0" text="nombre" />
-                        <TableColumn fx:id="tcPrecioProducto" prefWidth="129.0" text="precio" />
-                        <TableColumn fx:id="tcUnidadesProducto" prefWidth="97.0" text="unidades" />
+                        <TableColumn fx:id="tcPrecioProducto" prefWidth="155.0" text="precio" />
+                        <TableColumn fx:id="tcUnidadesProducto" prefWidth="125.0" text="unidades" />
                     </columns>
                   </TableView>
                </children>

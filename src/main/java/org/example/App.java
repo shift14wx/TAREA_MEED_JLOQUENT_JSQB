@@ -15,8 +15,12 @@ import java.io.IOException;
 /**
  * JavaFX App
  */
+
+
+
 public class App extends Application {
 
+    private static Usuario user;
     private static Scene scene;
 
     @Override
@@ -24,13 +28,17 @@ public class App extends Application {
         scene = new Scene(loadFXML("login"));
         stage.setScene(scene);
         stage.show();
-       Usuario user = new Usuario();
-        user.setNombre("carlos");
-        user.save();
     }
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+
+    public static Usuario getUsuarioLogueado(){
+        return user;
+    }
+    public static void setUsuarioLog(Usuario Us){
+        user = Us;
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

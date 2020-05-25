@@ -22,8 +22,21 @@ AnchorPane mainStage = new AnchorPane();
     @FXML
     void showProductosStage() throws IOException {
         try {
-            StackPane usersAnchor = FXMLLoader.load(getClass().getResource("/org.program/productoMain.fxml"));
-            this.mainStage.getChildren().setAll(usersAnchor);
+            StackPane productoAnchor = FXMLLoader.load(getClass().getResource("/org.program/productoMain.fxml"));
+           if (!this.mainStage.getId().equals("producto")){
+               this.mainStage.getChildren().setAll(productoAnchor);
+           }
+            //new FadeInRight(this.mainStage).play();
+        }catch (Exception e){
+            throw e;
+        }
+    }
+
+    @FXML
+    void showYo() throws IOException {
+        try {
+            StackPane productoAnchor = FXMLLoader.load(getClass().getResource("/org.program/yo.fxml"));
+                this.mainStage.getChildren().setAll(productoAnchor);
             //new FadeInRight(this.mainStage).play();
         }catch (Exception e){
             throw e;

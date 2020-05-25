@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.dashboardController">
    <left>
@@ -15,7 +16,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <JFXButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="168.0" prefWidth="238.0" text="Yo" textFill="#fcfcfc" GridPane.rowIndex="1" />
+            <JFXButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#showYo" prefHeight="168.0" prefWidth="238.0" text="Yo" textFill="#fcfcfc" GridPane.rowIndex="1" />
             <JFXButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#showProductosStage" prefHeight="168.0" prefWidth="238.0" text="Productos" textFill="#fcfcfc" />
          </children>
       </GridPane>
@@ -28,6 +29,12 @@
       </ToolBar>
    </top>
    <center>
-      <AnchorPane fx:id="mainStage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: red;" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="mainStage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #f12711, #f5af19);;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="165.0" layoutY="147.0" text="Tarea Meedd" textFill="WHITE">
+               <font>
+                  <Font size="38.0" />
+               </font></Label>
+         </children></AnchorPane>
    </center>
 </BorderPane>
